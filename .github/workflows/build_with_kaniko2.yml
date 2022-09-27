@@ -9,7 +9,6 @@ jobs:
         uses: mahmoudaboghadeer93/action-kaniko@master
         with:
           image: kaniko
-          tag: test-gha
           registry: artifactory.vodafone.com/docker-vfgroup-oneplatform-local
           username: ${{ secrets.JFROG_USERNAME }}
           password: ${{ secrets.JFROG_PASSWORD }}
