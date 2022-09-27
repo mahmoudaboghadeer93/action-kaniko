@@ -1,0 +1,17 @@
+name: Docker build
+on: push
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Kaniko build
+        uses: mahmoudaboghadeer93/action-kaniko@master
+        with:
+          image: artifactory.vodafone.com/docker-vfgroup-oneplatform-local/kaniko
+          tag: test-gha
+          registry: artifactory.vodafone.com
+          username: ${{ secrets.JFROG_USERNAME }}
+          password: ${{ secrets.JFROG_PASSWORD }}
+          cache: true
+          cache_registry: artifactory.vodafone.com/docker-vfgroup-oneplatform-local/cache
