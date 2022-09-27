@@ -8,7 +8,7 @@ jobs:
       - name: Kaniko build
         uses: mahmoudaboghadeer93/action-kaniko@master
         with:
-          image: artifactory.vodafone.com/docker-vfgroup-oneplatform-local/kaniko
+          image: kaniko
           tag: test-gha
           registry: artifactory.vodafone.com/docker-vfgroup-oneplatform-local
           username: ${{ secrets.JFROG_USERNAME }}
