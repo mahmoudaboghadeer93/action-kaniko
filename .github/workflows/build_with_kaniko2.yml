@@ -2,7 +2,7 @@ name: Docker build
 on: push
 jobs:
   docker:
-    runs-on: ubuntu-latest
+    runs-on: gcr.io/kaniko-project/executor
     steps:
       - uses: actions/checkout@master
       - name: Kaniko build
