@@ -1,4 +1,4 @@
-name: Build using Kaniko
+name: Build using Kanikoo
 on: push
 jobs:
   docker:
