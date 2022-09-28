@@ -2,7 +2,7 @@ name: Build using Kanikoo
 on: push
 jobs:
   docker:
-    runs-on: gcr.io/kaniko-project/executor:v1.7.0-debug
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
       - name: Set env vars
