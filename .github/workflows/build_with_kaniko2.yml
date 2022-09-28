@@ -5,10 +5,13 @@ jobs:
     runs-on: gcr.io/kaniko-project/executor
     steps:
       - uses: actions/checkout@master
+      - name: Set env vars
+        run: echo "TAG_DATE=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
       - name: Kaniko build
         uses: mahmoudaboghadeer93/action-kaniko@master
         with:
           image: kaniko
+          tag: ${{ env.TAG_DATE }}
           registry: artifactory.vodafone.com/docker-vfgroup-oneplatform-local
           username: ${{ secrets.JFROG_USERNAME }}
           password: ${{ secrets.JFROG_PASSWORD }}
