@@ -1,4 +1,4 @@
-name: Docker build
+name: Build using Kaniko
 on: push
 jobs:
   docker:
