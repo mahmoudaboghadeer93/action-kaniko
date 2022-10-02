@@ -1,19 +1,15 @@
-name: Build using Kaniko
+name: Docker build
 on: push
 jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - name: Set env vars
-        run: echo "TAG_DATE=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
       - name: Kaniko build
         uses: mahmoudaboghadeer93/action-kaniko@master
         with:
-          image: kaniko
-          tag: ${{ env.TAG_DATE }}
-          registry: artifactory.vodafone.com/docker-vfgroup-oneplatform-local
-          username: ${{ secrets.JFROG_USERNAME }}
-          password: ${{ secrets.JFROG_PASSWORD }}
+          image: mhmud/kaniko
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
           cache: true
-          cache_registry: artifactory.vodafone.com/docker-vfgroup-oneplatform-local/cache
+          cache_registry: mhmud/cache
