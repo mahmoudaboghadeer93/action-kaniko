@@ -2,7 +2,7 @@ name: Docker build
 on: push
 jobs:
   docker:
-    runs-on: gh-runner-own-59bc9dff6f-k26rk
+    runs-on: [self-hosted]
     steps:
       - uses: actions/checkout@master
       - name: Kaniko build
