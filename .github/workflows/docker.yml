@@ -1,0 +1,9 @@
+name: Docker build
+on: push
+jobs:
+  docker:
+    runs-on: [self-hosted]
+    steps:
+      - name: sleeeeeeep
+        run: sleep 199
+        
