@@ -5,5 +5,5 @@ jobs:
     runs-on: [self-hosted]
     steps:
       - name: sleeeeeeep
-        run: sleep 199
+        run: cat /sys/fs/cgroup/memory/memory.limit_in_bytes 
         
