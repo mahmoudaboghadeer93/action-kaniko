@@ -4,6 +4,6 @@ jobs:
   docker:
     runs-on: [self-hosted]
     steps:
-      - name: sleeeeeeeep
+      - name: sleeeeeep
         run: sleep 199 
         
